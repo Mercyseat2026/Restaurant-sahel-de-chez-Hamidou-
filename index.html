@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant SAHEL - Yaoundé</title>
+    <style>
+/* ============================================
+   RESTAURANT SAHEL - FEUILLE DE STYLE
+   ============================================ */
+
+/* Import des polices Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ---------- VARIABLES DE COULEURS ---------- */
+:root {
+    --sahel-gold: #C9A227;        /* Or / doré */
+    --sahel-dark: #1A1A1A;        /* Noir profond */
+    --sahel-cream: #FDF6E3;       /* Crème clair */
+    --sahel-terracotta: #C75B3A;  /* Terre cuite */
+    --sahel-sand: #E8D5B7;        /* Sable */
+    --sahel-brown: #5C3D2E;       /* Marron */
+}
+
+/* ---------- RÉINITIALISATION ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- CORPS DE LA PAGE ---------- */
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--sahel-cream);
+    color: var(--sahel-dark);
+    line-height: 1.6;
+}
+
+/* ============================================
+   EN-TÊTE (HEADER)
+   ============================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+/* Logo */
+.logo-complet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-complet img {
+    height: 90px;
+    width: auto;
+}
+
+.logo-texte {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-nom {
+     font-size: 0.75rem;
+    color: var(--sahel-cream);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.logo-sous {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--sahel-gold);
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--sahel-cream);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--sahel-gold);
+    transition: width 0.3s;
+}
+
+nav a:hover {
+    color: var(--sahel-gold);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Bouton Réserver */
+.btn-reserver {
+    background: var(--sahel-gold);
+    color: var(--sahel-dark);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 2px solid var(--sahel-gold);
+}
+
+.btn-reserver:hover {
+    background: transparent;
+    color: var(--sahel-gold);
+}
+
+/* ============================================
+   SECTION ACCUEIL (HERO)
+   ============================================ */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+            135deg,
+            rgba(26, 26, 26, 0.85) 0%,
+            rgba(92, 61, 46, 0.8) 100%
+        ),
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920') center/cover;
+}
+
+.hero-content {
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    color: var(--sahel-cream);
+    margin-bottom: 1rem;
+    letter-spacing: 5px;
+}
+
+.hero h1 span {
+    color: var(--sahel-gold);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--sahel-sand);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Boutons du Hero */
+.hero-btns {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: var(--sahel-gold);
+    color: var(--sahel-dark);
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: 2px solid var(--sahel-gold);
+    
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--sahel-gold);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--sahel-cream);
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid var(--sahel-cream);
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: var(--sahel-cream);
+    color: var(--sahel-dark);
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   SECTIONS GÉNÉRALES
+   ============================================ */
+section {
+    padding: 100px 5%;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--sahel-dark);
+}
+
+.section-title span {
+    color: var(--sahel-gold);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   SECTION MENU
+   ============================================ */
+.menu-section {
+    background: var(--sahel-cream);
+}
+
+/* Onglets */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 28px;
+    border: 2px solid var(--sahel-gold);
+    background: transparent;
+    color: var(--sahel-dark);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: var(--sahel-gold);
+    color: var(--sahel-dark);
+}
+
+/* Panneaux du menu (cachés par défaut) */
+.menu-panel {
+    display: none;
+}
+
+.menu-panel.active {
+    display: block;
+}
+
+/* Grille des plats */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Carte de plat */
+.menu-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Image du plat */
+.menu-card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Dégradé sous l'image */
+.menu-card-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(transparent, white);
+}
+
+/* Corps de la carte */
+.menu-card-body {
+    padding: 1.5rem;
+}
+
+/* Titre + prix */
+.menu-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.menu-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--sahel-dark);
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--sahel-terracotta);
+}
+
+.menu-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   SECTION À PROPOS
+   ============================================ */
+.about-section {
+    background: linear-gradient(
+        135deg,
+        var(--sahel-dark) 0%,
+        var(--sahel-brown) 100%
+    );
+    color: var(--sahel-cream);
+}
+
+.about-section .section-title {
+    color: var(--sahel-cream);
+}
+
+.about-section .section-subtitle {
+    color: var(--sahel-sand);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about-img {
+    border-radius: 200px;
+    overflow: hidden;
+    box-shadow: 0 200px 600px rgba(0, 0, 0, 0.3);
+}
+
+.about-img img {
+    width: 100%;
+    display: block;
+}
+
+.about-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--sahel-gold);
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--sahel-sand);
+}
+
+/* ============================================
+   SECTION LOCALISATION
+   ============================================ */
+.location-section {
+    background: var(--sahel-cream);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.location-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Carte d'information */
+.info-card {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.3s;
+}
+
+.info-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--sahel-gold);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.info-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: var(--sahel-dark);
+}
+
+.info-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Carte Google Maps */
+.map-container {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border: none;
+    display: block;
+}
+
+/* ============================================
+   SECTION CONTACT
+   ============================================ */
+.contact-section {
+    background: var(--sahel-dark);
+    color: var(--sahel-cream);
+    text-align: center;
+}
+
+.contact-section .section-title {
+    color: var(--sahel-cream);
+}
+
+.contact-section .section-subtitle {
+    color: var(--sahel-sand);
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--sahel-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.contact-item h4 {
+    font-size: 1rem;
+}
+
+.contact-item p {
+    color: var(--sahel-sand);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   SECTION AVIS (COMMENTAIRES CLIENTS)
+   ============================================ */
+.avis-section {
+    background: var(--sahel-cream);
+}
+
+.avis-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Note moyenne globale */
+.avis-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    flex-wrap: wrap;
+}
+
+.avis-note-moyenne {
+    text-align: center;
+}
+
+.avis-note-moyenne .note-chiffre {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--sahel-gold);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.avis-note-moyenne .note-etoiles {
+    color: var(--sahel-gold);
+    font-size: 1.3rem;
+    margin: 0.4rem 0;
+}
+
+.avis-note-moyenne .note-total {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Formulaire d'avis */
+.avis-form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.avis-form-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: var(--sahel-dark);
+}
+
+.avis-form-row {
+    margin-bottom: 1.3rem;
+}
+
+.avis-form-row label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--sahel-brown);
+}
+
+.avis-form-row input,
+.avis-form-row textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--sahel-sand);
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--sahel-dark);
+    background: var(--sahel-cream);
+    transition: border-color 0.3s;
+}
+
+.avis-form-row input:focus,
+.avis-form-row textarea:focus {
+    outline: none;
+    border-color: var(--sahel-gold);
+}
+
+.avis-form-row textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Sélecteur d'étoiles interactif */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+    font-size: 2rem;
+}
+
+.star-rating input {
+    display: none;
+    width: auto;
+}
+
+.star-rating label {
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+    margin: 0;
+    display: inline;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: var(--sahel-gold);
+}
+
+.avis-submit-btn {
+    background: var(--sahel-gold);
+    color: var(--sahel-dark);
+    border: 2px solid var(--sahel-gold);
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+.avis-submit-btn:hover {
+    background: transparent;
+    color: var(--sahel-terracotta);
+    border-color: var(--sahel-terracotta);
+}
+
+.avis-form-msg {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--sahel-terracotta);
+    display: none;
+}
+
+.avis-form-msg.show {
+    display: block;
+}
+
+/* Liste des avis */
+.avis-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.avis-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    animation: avisApparait 0.4s ease;
+}
+
+@keyframes avisApparait {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.avis-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.avis-auteur {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.avis-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--sahel-gold);
+    color: var(--sahel-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    flex-shrink: 0;
+}
+
+.avis-auteur-info .avis-nom {
+    font-weight: 600;
+    color: var(--sahel-dark);
+}
+
+.avis-auteur-info .avis-date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.avis-etoiles {
+    color: var(--sahel-gold);
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+.avis-texte {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.avis-vide {
+    text-align: center;
+    color: #999;
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* ============================================
+   PIED DE PAGE (FOOTER)
+   ============================================ */
+footer {
+    background: #0f0f0f;
+    color: #888;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--sahel-gold);
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--sahel-gold);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--sahel-gold);
+    border-color: var(--sahel-gold);
+    color: var(--sahel-dark);
+}
+
+/* ============================================
+   RESPONSIVE (MOBILE)
+   ============================================ */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+    }
+
+    .about-content,
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .avis-summary {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .avis-card-header {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- ===== EN-TÊTE (HEADER) ===== -->
+    <header>
+    <div class="logo-complet">
+        <img src="images/logosahel.png" alt="Logo">
+        <div class="logo-texte">
+            <span class="logo-nom">Restaurant</span>
+            <span class="logo-sous">SAHEL</span>
+        </div>
+    </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#localisation">Localisation</a></li>
+                <li><a href="#avis">Avis</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+         <ul><li><a href="#localisation">Position initiale </a></li></ul>
+    </header>
+
+    <!-- ===== SECTION ACCUEIL (HERO) ===== -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h1>RESTAURANT <span>SAHEL</span></h1>
+            <p>Découvrez une expérience culinaire authentique au cœur de Yaoundé. Saveurs africaines revisitées avec passion.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn-primary">Découvrir le Menu</a>
+                <a href="#localisation" class="btn-secondary">Votre position</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION MENU ===== -->
+    <section class="menu-section" id="menu">
+        <h2 class="section-title">Notre <span>Menu</span></h2>
+        <p class="section-subtitle">Des plats préparés avec amour, aux saveurs du Sahel</p>
+
+        <!-- Boutons des onglets -->
+        <div class="menu-tabs">
+            <button class="tab-btn active" onclick="showTab('menusducamer')">Les Menus du Camer</button>
+            <button class="tab-btn" onclick="showTab('boissons')">Boissons</button>
+        </div>
+
+        <!-- ONGLET : menu du camer -->
+        <div class="menu-panel active" id="menusducamer">
+            <div class="menu-grid">
+                
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('images/eru.png')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>Couscous   ERU  PISTACHE  GOMBO </h3>
+                            <span class="price">>700->800FCFA >1000->1500FCFA >2000->2500 FCFA</span>
+                        </div>
+                        <p>Legumes riches en vitames et contribue au developpement physique de votre corps.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('images/spaghetti_rognon_appetissant.png')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>ROGNON
+                            <br>Pomme spaghetti plantain
+                            <br>Spaghetti 
+                            <br>Maccaroni </h3>
+                            <span class="price">
+                                <br>2 000 FCFA 
+                                <br>2 500 FCFA
+                            </span>
+                        </div>
+                        <p>.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('images/spaghetti_poulet_menthe_appetissant.png')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>FOIE
+                            <br>Pommme spaghetti
+                            <br>Spaghetti
+                            <br>Maccaroni
+                            <br>Plantain
+                            </h3>
+                            <span class="price">
+                                <br>1 500 FCFA
+                                <br>2 000 FCFA
+                            </span>
+                        </div>
+                        <p>Mélange de légumes frais, avocat, mangue et vinaigrette au citron vert.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('images/poulet_frites_appetissant.png')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>Poulets
+                            <br> Pomme plantain
+                            <br> Spaghetti
+                            <br> Maccaroni
+                            <br> Plantain
+                            </h3>
+                            <span class="price">
+                                <br>2 000 FCFA
+                                <br>2 500 FCFA
+                                <br>3 000 FCFA
+                            </span>
+                        </div>
+                        <p>Soupe traditionnelle épaisse au gombo, viande de bœuf et épices locales.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('images/plat_hache_appetissant.png')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>Viande hachee
+                            <br> Pomme plantain
+                            <br> Spaghetti
+                            <br> Maccaroni
+                            <br> Plantain
+                            </h3>
+                            <span class="price">
+                                <br>2 000 FCFA
+                                <br>2 500 FCFA
+                                <br>3 000 FCFA
+                            </span>
+                        </div>
+                        <p>Soupe traditionnelle épaisse au gombo, viande de bœuf et épices locales.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('images/spaghetti_boeuf_appetissant.png')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>Beefteak
+                            <br> Pomme plantain
+                            <br> Spaghetti
+                            <br> Maccaroni
+                            <br> Plantain
+                            </h3>
+                            <span class="price">
+                                <br>1 500 FCFA
+                                <br>2 000 FCFA
+                                <br>2 500 FCFA
+                                <br>3 000 FCFA
+                            </span>
+                        </div>
+                        <p>Soupe traditionnelle épaisse au gombo, viande de bœuf et épices locales.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ONGLET : BOISSONS -->
+        <div class="menu-panel" id="boissons">
+            <div class="menu-grid">
+                
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>Jus de Bissap</h3>
+                            <span class="price">1 500 FCFA</span>
+                        </div>
+                        <p>Jus frais d'hibiscus, légèrement sucré, rafraîchissant.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>Jus de Gingembre</h3>
+                            <span class="price">1 500 FCFA</span>
+                        </div>
+                        <p>Jus pétillant au gingembre frais, citron vert et menthe.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>Café Arabica</h3>
+                            <span class="price">1 200 FCFA</span>
+                        </div>
+                        <p>Café moulu sur place, origine Ouest-Cameroun, intense et aromatique.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600')"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3>Cocktail Sahel</h3>
+                            <span class="price">3 500 FCFA</span>
+                        </div>
+                        <p>Signature maison : ananas, mangue, citron vert et touche de gingembre.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ===== SECTION À PROPOS ===== -->
+    <section class="about-section" id="apropos">
+        <h2 class="section-title">Notre <span>Histoire</span></h2>
+        <p class="section-subtitle">Une passion pour les saveurs authentiques du Sahel</p>
+        
+        <div class="about-content">
+            <div class="about-img">
+                <img src="images/inter.png" alt="Intérieur Restaurant Sahel">
+            </div>
+            <div class="about-text">
+                <h3>Bienvenue au Restaurant SAHEL</h3>
+                <p>Fondé en 2013 au cœur de Yaoundé, le Restaurant SAHEL est né d'une passion profonde pour la cuisine africaine et les saveurs du Sahel.</p>
+                <p>Nous sélectionnons nos ingrédients avec soin auprès des producteurs locaux camerounais, garantissant fraîcheur et authenticité dans chaque assiette.</p>
+                <p>Que ce soit pour un déjeuner d'affaires, un dîner romantique ou une célébration en famille, nous vous promettons une expérience gastronomique mémorable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION LOCALISATION ===== -->
+    <section class="location-section" id="localisation">
+        <h2 class="section-title">Où Nous <span>Trouver</span></h2>
+        <p class="section-subtitle">Au cœur de Yaoundé, facilement accessible</p>
+        
+        <div class="location-grid">
+            <div class="location-info">
+                
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <h4>Adresse</h4>
+                        <p><br>Yaoundé, Cameroun</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <div>
+                        <h4>Horaires</h4>
+                        <p>Lundi - Dimanche : 09h00 - 23h00<br>Service continu le week-end</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p>+237 690 999 476<br>+237 658 801 078</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>contact@restaurantsahel.cm</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127553.83252865693!2d11.440104!3d3.8480325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcfa23a1876c7%3A0xa8c2c7c7c7c7c7c7!2sYaound%C3%A9%2C%20Cameroun!5e0!3m2!1sfr!2s!4v1699999999999!5m2!1sfr!2s" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION AVIS (COMMENTAIRES CLIENTS) ===== -->
+    <section class="avis-section" id="avis">
+        <h2 class="section-title">Avis de nos <span>Clients</span></h2>
+        <p class="section-subtitle">Votre avis compte, partagez votre expérience au Restaurant SAHEL</p>
+
+        <div class="avis-wrapper">
+
+            <!-- Note moyenne -->
+            <div class="avis-summary">
+                <div class="avis-note-moyenne">
+                    <div class="note-chiffre" id="noteChiffre">5.0</div>
+                    <div class="note-etoiles" id="noteEtoiles">★★★★★</div>
+                    <div class="note-total" id="noteTotal">0 avis</div>
+                </div>
+            </div>
+
+            <!-- Formulaire pour laisser un avis -->
+            <div class="avis-form-card">
+                <h3>Laissez votre avis</h3>
+                <form id="avisForm">
+                    <div class="avis-form-row">
+                        <label for="avisNom">Votre nom</label>
+                        <input type="text" id="avisNom" placeholder="Ex : Marie N." required>
+                    </div>
+
+                    <div class="avis-form-row">
+                        <label>Votre note</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="note" value="5" checked>
+                            <label for="star5">★</label>
+                            <input type="radio" id="star4" name="note" value="4">
+                            <label for="star4">★</label>
+                            <input type="radio" id="star3" name="note" value="3">
+                            <label for="star3">★</label>
+                            <input type="radio" id="star2" name="note" value="2">
+                            <label for="star2">★</label>
+                            <input type="radio" id="star1" name="note" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+
+                    <div class="avis-form-row">
+                        <label for="avisCommentaire">Votre commentaire</label>
+                        <textarea id="avisCommentaire" placeholder="Racontez-nous votre expérience au restaurant..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="avis-submit-btn">Publier mon avis</button>
+                    <div class="avis-form-msg" id="avisFormMsg">Merci ! Votre avis a bien été publié.</div>
+                </form>
+            </div>
+
+            <!-- Liste des avis -->
+            <div class="avis-liste" id="avisListe">
+                <!-- Les avis sont injectés ici par le script -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== SECTION CONTACT ===== -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Contactez-<span>Nous</span></h2>
+        <p class="section-subtitle">Savourez vos plats et contactez-nous pour toute information</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <h4>Téléphone</h4>
+                <p>+237 690 999 476</p>
+                <p>+237 658 801 078</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <h4>Email</h4>
+                <p>contact@restaurantsahel.cm</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <h4>WhatsApp</h4>
+                <p>+237 658 801 078</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">🕐</div>
+                <h4>Horaires</h4>
+                <p>09h00 - 23h00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PIED DE PAGE (FOOTER) ===== -->
+    <footer>
+        <div class="footer-logo">Restaurant SAHEL</div>
+        
+
+        <p>Ce site a ete realise par ip'tech service toujours la pour vous </p>
+        <br><p>Numero -> +237 690 459 712</p>
+        
+        <div class="footer-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#menu">Menu</a>
+            <a href="#apropos">À Propos</a>
+            <a href="#localisation">Localisation</a>
+            <a href="#avis">Avis</a>
+            <a href="#contact">Contact</a>
+        </div>
+        
+        <div class="social-links">
+            <a href="#">f</a>
+            <a href="#">📷</a>
+            <a href="#">𝕏</a>
+        </div>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.85rem;">© 2026 Restaurant SAHEL - Yaoundé, Cameroun</p>
+    </footer>
+
+    <script>
+        /* ============================================
+           GESTION DES ONGLETS DU MENU
+           ============================================ */
+        function showTab(id) {
+            document.querySelectorAll('.menu-panel').forEach(panel => panel.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        /* ============================================
+           SECTION AVIS CLIENTS
+           Les avis sont sauvegardés dans le navigateur
+           du visiteur (localStorage) afin de persister
+           d'une visite à l'autre sur le même appareil.
+           ============================================ */
+
+        const AVIS_CLE_STOCKAGE = 'sahel_avis_clients';
+
+        // Quelques avis d'exemple affichés par défaut au premier chargement
+        const avisParDefaut = [
+            {
+                nom: "Junior Etoundi",
+                note: 5,
+                commentaire: "Excellent accueil et plats délicieux ! Le poulet DG est incontournable. Je recommande vivement.",
+                date: "2026-06-02"
+            },
+            {
+                nom: "Aïcha Bello",
+                note: 4,
+                commentaire: "Très bonne ambiance et cuisine authentique. Le service était un peu lent un samedi soir mais ça valait l'attente.",
+                date: "2026-06-18"
+            },
+            {
+                nom: "Paul Mvondo",
+                note: 5,
+                commentaire: "Mon restaurant préféré à Yaoundé pour les plats camerounais. Le Ndolé et l'Eru sont juste parfaits.",
+                date: "2026-07-01"
+            }
+        ];
+
+        function chargerAvis() {
+            const donnees = localStorage.getItem(AVIS_CLE_STOCKAGE);
+            if (donnees) {
+                return JSON.parse(donnees);
+            }
+            // Premier passage : on initialise avec les avis par défaut
+            localStorage.setItem(AVIS_CLE_STOCKAGE, JSON.stringify(avisParDefaut));
+            return avisParDefaut;
+        }
+
+        function sauvegarderAvis(avis) {
+            localStorage.setItem(AVIS_CLE_STOCKAGE, JSON.stringify(avis));
+        }
+
+        function formatDate(dateStr) {
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+
+        function initiales(nom) {
+            return nom.trim().split(' ').map(mot => mot[0]).join('').substring(0, 2).toUpperCase();
+        }
+
+        function etoilesHTML(note) {
+            return '★★★★★☆☆☆☆☆'.substring(5 - note, 10 - note);
+        }
+
+        function afficherAvis() {
+            const avis = chargerAvis();
+            const liste = document.getElementById('avisListe');
+
+            if (avis.length === 0) {
+                liste.innerHTML = '<div class="avis-vide">Aucun avis pour le moment. Soyez le premier à donner votre avis !</div>';
+            } else {
+                // Les plus récents en premier
+                const avisTries = [...avis].sort((a, b) => new Date(b.date) - new Date(a.date));
+                liste.innerHTML = avisTries.map(a => `
+                    <div class="avis-card">
+                        <div class="avis-card-header">
+                            <div class="avis-auteur">
+                                <div class="avis-avatar">${initiales(a.nom)}</div>
+                                <div class="avis-auteur-info">
+                                    <div class="avis-nom">${a.nom}</div>
+                                    <div class="avis-date">${formatDate(a.date)}</div>
+                                </div>
+                            </div>
+                            <div class="avis-etoiles">${etoilesHTML(a.note)}</div>
+                        </div>
+                        <p class="avis-texte">${a.commentaire}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Mise à jour de la note moyenne
+            const noteChiffre = document.getElementById('noteChiffre');
+            const noteEtoiles = document.getElementById('noteEtoiles');
+            const noteTotal = document.getElementById('noteTotal');
+
+            if (avis.length === 0) {
+                noteChiffre.textContent = '—';
+                noteEtoiles.textContent = '☆☆☆☆☆';
+                noteTotal.textContent = '0 avis';
+            } else {
+                const moyenne = avis.reduce((somme, a) => somme + Number(a.note), 0) / avis.length;
+                noteChiffre.textContent = moyenne.toFixed(1);
+                noteEtoiles.textContent = etoilesHTML(Math.round(moyenne));
+                noteTotal.textContent = avis.length + (avis.length > 1 ? ' avis' : ' avis');
+            }
+        }
+
+        // Fonction d'échappement simple pour éviter l'injection de balises HTML
+        function echapperHTML(texte) {
+            const div = document.createElement('div');
+            div.textContent = texte;
+            return div.innerHTML;
+        }
+
+        document.getElementById('avisForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nom = echapperHTML(document.getElementById('avisNom').value.trim());
+            const commentaire = echapperHTML(document.getElementById('avisCommentaire').value.trim());
+            const note = document.querySelector('input[name="note"]:checked').value;
+
+            if (!nom || !commentaire) return;
+
+            const avis = chargerAvis();
+            avis.push({
+                nom: nom,
+                note: Number(note),
+                commentaire: commentaire,
+                date: new Date().toISOString().split('T')[0]
+            });
+            sauvegarderAvis(avis);
+            afficherAvis();
+
+            // Message de confirmation
+            const msg = document.getElementById('avisFormMsg');
+            msg.classList.add('show');
+            setTimeout(() => msg.classList.remove('show'), 4000);
+
+            // Réinitialisation du formulaire
+            this.reset();
+            document.getElementById('star5').checked = true;
+        });
+
+        // Affichage initial des avis au chargement de la page
+        afficherAvis();
+    </script>
+</body>
+</html>
